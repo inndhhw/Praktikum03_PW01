@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Transaction Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a, .navbar button {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form input[type="text"], form input[type="file"], form input[type="tel"], form input[type="email"], form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+
+
+        .gambar {
+            border: 1px solid rgb(148, 148, 148);
+            border-radius: 15px;
+            width: 1250px;
+            height: fit-content;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .gambar input#picture {
+            width: 1220px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#generate-link">Generate Link</a>
+    <a href="#transaction-history">Transaction History</a>
+    <a href="#Policy">Policy</a>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div class="content">
+    <form action="/submit-form" method="post" enctype="multipart/form-data">
+        
+        <div class="gambar">
+            <img src="../photo1.jpeg" width="200" alt="" srcset=""> <br>
+            <label for="picture">Upload Picture:</label> <br>
+            <input type="file" id="picture" name="picture"><br>
+        </div>
+
+        <label class="title" for="Title Here">Product Name</label>
+        <input type="text" id="Title Here" name="Title Here"><br>
+
+        <label for="Description">Description:</label>
+        <input type="text" id="Description" name="Description"><br>
+
+        <label for="Memory">Memory:</label>
+        <select id="Memory" name="Memory">
+            <option value="8GB">8GB</option>
+            <option value="16GB">16GB</option>
+        </select><br>
+
+        <label for="Storage">Storage:</label>
+        <select id="Storage" name="Storage">
+            <option value="256GB">2556GB</option>
+            <option value="512GB">512GB</option>
+        </select><br>
+
+        <label for="Color">Color:</label>
+        <select id="Color" name="Color">
+            <option value="Space Grey">Space Grey</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+        </select><br>
+
+
+        <label for="account-number">Account Number:</label>
+        <input type="text" id="account-number" name="account-number" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" placeholder="1234-5678-9012"><br>
+
+        <label for="Transaction">Transaction:</label>
+        <select id="Transaction" name="Transaction">
+            <option value="Transfer Bank">Transfer Bank</option>
+            <option value="Kartu Kredit/Debit">Kartu Kredit/Debit</option>
+            <option value="COD">COD</option>
+        </select><br>
+
+        <label>Notification Preferences:</label><br>
+        <input type="checkbox" id="notify-mobile" name="notify-mobile">
+        <label for="notify-mobile">Send to Mobile Phone</label>
+        <input type="tel" id="mobile-number" name="mobile-number" placeholder="+12345678901"><br>
+
+        <input type="checkbox" id="notify-email" name="notify-email">
+        <label for="notify-email">Send to Email</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com"><br>
+
+        <button type="submit">Generate Notar Link</button>
+    </form>
+</div>
+
+<script>
+    function logout() {
+        // Add logout functionality here
+    }
+</script>
+
+</body>
+</html>
